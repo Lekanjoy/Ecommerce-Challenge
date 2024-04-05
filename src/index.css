@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .size {
+    @apply bg-[#F2F2F2] rounded-full w-[34px] h-[34px] flex items-center justify-center text-xs;
+  }
+  .slide {
+    @apply sliding-item min-w-[357px] sliding-item flex justify-between px-6 py-4 gap-x-4 relative md:min-w-[50%];
+  }
+}
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  nav {
+    animation: animate-slideLeft 0.8s ease-in-out;
+  }
+  footer {
+    box-shadow: 0px -1px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  @keyframes animate-slideLeft {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  input {
+    border-radius: 2px;
+    outline: none;
+  }
+
+  .sliding-item {
+    background: linear-gradient(114.76deg, #7fc6cf 34.22%, #1aa9bc 74.81%);
+    border-radius: 8px;
+    animation: slide 20s linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+}
