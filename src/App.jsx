@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
-import Home from "./components/Home";
+import Home from "./components/pages/Home";
 import ProductDetails from "./components/pages/ProductDetails";
 import Header from "./components/Header";
 
@@ -12,12 +12,11 @@ function App() {
   const [showNav, setShowNav] = useState(false);
   const [loading, setLoading] = useState(false);
   const [productData, setProductData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('')
-  const [skip, setSkip] = useState(0)
+  const [searchTerm, setSearchTerm] = useState("");
+  const [skip, setSkip] = useState(0);
 
   // SideBar Toggle Function
   const toggleSideBar = () => setShowNav((prevState) => !prevState);
-
 
   // Getting Products Data from Backend
   useEffect(() => {
@@ -29,12 +28,13 @@ function App() {
       .then((data) => {
         setProductData(data.products);
         setLoading(false);
-        console.log(skip);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        alert("Something went wrong!!");
+        console.error(error);
+      });
   }, [searchTerm, skip]);
 
-  
   return (
     <ErrorBoundary>
       <ProductDataContext.Provider
@@ -42,7 +42,7 @@ function App() {
           loading,
           productData,
           skip,
-          setSkip
+          setSkip,
         }}
       >
         <Header

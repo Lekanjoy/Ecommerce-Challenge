@@ -8,13 +8,12 @@ const ProductCard = ({ productData }) => {
       {productData?.length < 1 ? (
         <h1 className=" w-full grid place-items-center uppercase font-semibold text-lg mt-24 animate-bounce md:ml-[150%]">No Products Found!</h1>
       ) : (
-        productData.map((product) => {
+        productData?.map((product) => {
           return (
             <div
               key={product.id}
               className="bg-[#fefefe] w-full border shadow-md  p-2 rounded-md text-center"
             >
-                {/* Navigates to unique product page details when clicked on image */}
                 <div className=" rounded  w-full h-[150px]  border ">
                   <img
                     src={product.thumbnail}

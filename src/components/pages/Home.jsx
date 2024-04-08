@@ -1,9 +1,9 @@
 import { useEffect, useContext } from "react";
-import { ProductDataContext } from "../App";
-import Products from "./Products";
-import secure from "../assets/secure.png";
-import paperBag from "../assets/Paperbag.png";
-import DisCountCard from "./DisCountCard";
+import { ProductDataContext } from "../../App";
+import Products from "../Products";
+import secure from "../../assets/secure.png";
+import paperBag from "../../assets/Paperbag.png";
+import DisCountCard from "../DisCountCard";
 
 const Home = () => {
   const { skip, setSkip } = useContext(ProductDataContext);
@@ -48,9 +48,11 @@ const Home = () => {
       <Products />
       <div className="flex justify-between items-center my-10 text-white">
         <button
-        disabled={skip < 10}
+          disabled={skip < 10}
           onClick={() => setSkip((prevState) => prevState - 10)}
-          className={`px-2 py-1 rounded ${skip > 10 ? 'bg-red-600' : 'bg-red-300 cursor-not-allowed'}`}
+          className={`px-2 py-1 rounded ${
+            skip > 10 ? "bg-red-600" : "bg-red-300 cursor-not-allowed"
+          }`}
         >
           Prev
         </button>
