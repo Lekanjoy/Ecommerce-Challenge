@@ -65,14 +65,7 @@ npm run lint
 ```
 Checks for linting errors using ESLint.
 
-## Run Tests:
-
-```bash
-npm run test
-```
-Launches the test runner in the interactive watch mode.
-
 ## Additional Information
 This project uses Vite.js for fast development and optimized builds. The React components and application logic can be found inside the src directory.
 
-For detailed information about Vite.js, refer to the Vite documentation.
+For detailed information about Vite.js, refer to the Vite documentation [here](https://vitejs.dev/).
